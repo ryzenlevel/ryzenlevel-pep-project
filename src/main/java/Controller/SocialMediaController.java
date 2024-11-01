@@ -18,6 +18,46 @@ public class SocialMediaController {
         Javalin app = Javalin.create();
         app.get("example-endpoint", this::exampleHandler);
 
+        /*Allows Users to log into the system and access messages */
+        /*app.post("/login", ctx -> {
+         * 
+         *}) */
+
+        /*Allows users to register into the system */
+        /*app.post("/register", ctx -> {
+         * 
+        *}) */
+
+        /*Allows users to post messages through the system */
+        /*app.post("/messages", ctx -> {
+         * 
+        *}) */
+
+        /*Allows users to see all messages persisted in the database */
+        /*app.get("/messages", ctx -> {
+         * 
+         *}); */
+
+        /*Allows users to see a specific message using the message's internal id */
+        /*app.get("/messages/{messageid}", ctx -> {
+         * 
+        *}) */
+
+        /*Allows users to delete specific messages using the message's internal id */
+        /*app.delete("/messages/{messageid}", ctx -> {
+         * 
+        *}) */
+
+        /*Allows users to updates specific messages using the message's internal id */
+        /*app.patch("/messages/{messageid}", ctx -> {
+         * 
+        *}) */
+
+        /*Allows users to see specific messages from a specific user using the user's internal id */
+        /*app.get("/accounts/{account_id}/messages", ctx -> {
+         * 
+        *}) */
+
         return app;
     }
 
