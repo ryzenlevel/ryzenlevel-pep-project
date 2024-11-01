@@ -1,5 +1,9 @@
 package Controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import Model.Account;
+import Model.Message;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
@@ -17,46 +21,14 @@ public class SocialMediaController {
     public Javalin startAPI() {
         Javalin app = Javalin.create();
         app.get("example-endpoint", this::exampleHandler);
-
-        /*Allows Users to log into the system and access messages */
-        /*app.post("/login", ctx -> {
-         * 
-         *}) */
-
-        /*Allows users to register into the system */
-        /*app.post("/register", ctx -> {
-         * 
-        *}) */
-
-        /*Allows users to post messages through the system */
-        /*app.post("/messages", ctx -> {
-         * 
-        *}) */
-
-        /*Allows users to see all messages persisted in the database */
-        /*app.get("/messages", ctx -> {
-         * 
-         *}); */
-
-        /*Allows users to see a specific message using the message's internal id */
-        /*app.get("/messages/{messageid}", ctx -> {
-         * 
-        *}) */
-
-        /*Allows users to delete specific messages using the message's internal id */
-        /*app.delete("/messages/{messageid}", ctx -> {
-         * 
-        *}) */
-
-        /*Allows users to updates specific messages using the message's internal id */
-        /*app.patch("/messages/{messageid}", ctx -> {
-         * 
-        *}) */
-
-        /*Allows users to see specific messages from a specific user using the user's internal id */
-        /*app.get("/accounts/{account_id}/messages", ctx -> {
-         * 
-        *}) */
+        //app.post("/register", this::postRegisterHandler);
+        //app.post("/login", this::postLoginHandler);
+        //app.post("/messages", this::postMessageHandler);
+        //app.get("/messages", this::getMessageHandler);
+        //app.get("/messages/{message_id}", this::getSpecificMessageHandler);
+        //app.delete("/messages/{message_id}", this::deleteSpecificMessageHandler);
+        //app.patch("/messages/{message_id}", this::updateSpecificMessageHandler);
+        //app.get("/accounts/{account_id}/messages", this::getAccountMessageHandler);
 
         return app;
     }
@@ -68,6 +40,38 @@ public class SocialMediaController {
     private void exampleHandler(Context context) {
         context.json("sample text");
     }
+
+    /*private Account postRegisterHandler(Context ctx) throws JsonProcessingException {
+
+    }*/
+
+    /*private Account postLoginHandler(Context ctx) throws JsonProcessingException {
+     
+    } */
+
+    /*private Message postMessageHandler(Context ctx) throws JsonProcessingException {
+     
+    } */
+
+    /*private void getMessageHandler(Context ctx) {
+     
+    } */
+
+    /*private void getSpecificMessageHandler(Context ctx) {
+     
+    } */
+
+    /*private Message deleteSpecificMessageHandler(Context ctx) {
+     
+    } */
+
+    /*private Message updateSpecificMessageHandler(Context ctx) throws JsonProcessingException {
+     
+    } */
+
+    /*private void getAccountMessageHandler(Context ctx) {
+    
+    } */
 
 
 }
