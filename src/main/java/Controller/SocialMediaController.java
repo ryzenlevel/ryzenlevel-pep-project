@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 import Model.Account;
 import Model.Message;
+import Service.AccountService;
+import Service.MessageService;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
@@ -41,15 +43,23 @@ public class SocialMediaController {
         context.json("sample text");
     }
 
-    /*private Account postRegisterHandler(Context ctx) throws JsonProcessingException {
-
+    /*private void postRegisterHandler(Context ctx) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        Account na = om.readValue(ctx.body(), Account.class);
+        Account addedAccount = AccountService.addAccount(na);
+        if(addedAccount != null) {
+            ctx.json(mapper.writeValueAsString(addedAccount));
+        }
+        else {
+            ctx.status(400);
+        }
     }*/
 
-    /*private Account postLoginHandler(Context ctx) throws JsonProcessingException {
+    /*private void postLoginHandler(Context ctx) throws JsonProcessingException {
      
     } */
 
-    /*private Message postMessageHandler(Context ctx) throws JsonProcessingException {
+    /*private void postMessageHandler(Context ctx) throws JsonProcessingException {
      
     } */
 
@@ -61,11 +71,11 @@ public class SocialMediaController {
      
     } */
 
-    /*private Message deleteSpecificMessageHandler(Context ctx) {
+    /*private void deleteSpecificMessageHandler(Context ctx) {
      
     } */
 
-    /*private Message updateSpecificMessageHandler(Context ctx) throws JsonProcessingException {
+    /*private void updateSpecificMessageHandler(Context ctx) throws JsonProcessingException {
      
     } */
 
