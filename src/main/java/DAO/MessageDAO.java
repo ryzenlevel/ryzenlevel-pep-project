@@ -102,7 +102,7 @@ public class MessageDAO {
             
             //Add variable from service method to query
             ps.setInt(1, id);
-            ps.executeQuery();
+            ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
